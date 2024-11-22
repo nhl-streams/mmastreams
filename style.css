@@ -650,11 +650,16 @@ video {
 
 .bg-gray-950 {
   --tw-bg-opacity: 1;
-    background-color: #00000;
-    background-repeat: repeat;
-    background-image: url(/mma-streams.webp)!important
-  
+   body {
+    background-color: #000; /* Set a black background color */
+    background-image: url('/mma-streams.webp'); /* Path to your background image */
+    background-repeat: repeat; /* The background image will repeat */
+    background-attachment: fixed; /* Keeps the image fixed during scrolling */
+    background-size: auto; /* Use `cover` or `contain` if needed */
 }
+
+  
+
 
 .p-4 {
   padding: 1rem;
