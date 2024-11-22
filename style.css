@@ -650,7 +650,10 @@ video {
 
 .bg-gray-950 {
   --tw-bg-opacity: 1;
-  background-color: rgb(3 7 18 / var(--tw-bg-opacity, 1));
+    background-color: #00000;
+    background-repeat: repeat;
+    background-image: url(/wp-content/uploads/2023/08/grid-pattern.png)!important
+  
 }
 
 .p-4 {
