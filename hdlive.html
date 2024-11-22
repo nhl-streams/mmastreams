@@ -1,1 +1,597 @@
+<center>
+    <a href="https://freenhlstream.com/register.php" rel="nofollow" target="_top" style="display:block;text-decoration: none;max-width:900px">
+        <style type="text/css">
+            body {
+                text-align: -webkit-center;
+                padding: 0;
+                margin: 0;
+                width: 1px;
+                min-width: 100%;
+                *width: 100%;
+            }
 
+            h3 {
+                margin: 0;
+                padding: 8px;
+                font-family: 'Titillium Web', sans-serif;
+                color: #f0f0f0;
+                font-size: 16px;
+                font-weight: normal;
+                text-align: left;
+                letter-spacing: 0.4px;
+            }
+
+            .vidCont-center,
+            .vidCont-section,
+            .vidPlay {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                -o-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            .vidCont-section {
+                width: 33.33333%;
+                height: 60%;
+                float: left;
+                padding-top: 20px;
+            }
+
+            .vidCont-center {
+                width: 100%;
+                height: 30%;
+                clear: both;
+                background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+                background-repeat: repeat-x;
+                filter: e(("progid:DXImageTransform.Microsoft.gradient(startColorstr=\'%d\', endColorstr=\'%d\', GradientType=0)", argb(rgba(0, 0, 0, 1)), argb(rgba(0, 0, 0, 1))));
+            }
+
+            .vidCont-center--small {
+                width: 100%;
+                height: 10%;
+                clear: both;
+                background-repeat: no-repeat;
+                background-position: 368px 4px;
+            }
+
+            .vid-txt {
+                color: #f0f0f0;
+                text-decoration: none;
+            }
+
+            .vid-txt.med- {
+                font-size: 21px;
+                letter-spacing: 0.3px;
+                font-weight: 200;
+                color: #ddd;
+            }
+
+            .vid-txt.small- {
+                font-size: 16px;
+                position: relative;
+                top: -8px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            .vid-txt.lg- {
+                font-size: 24px;
+                font-weight: 400;
+                letter-spacing: .4px;
+                text-transform: uppercase;
+                position: relative;
+                top: 10px;
+            }
+
+            .vid-teamImg {
+                height: 70px;
+            }
+
+            .vidPlay {
+                cursor: pointer;
+                position: relative;
+                display: table;
+                margin: 0 auto;
+                width: 64px;
+                height: 54px;
+                padding: 11px 16px;
+                border-radius: 4px;
+                background-color: #c1272d;
+                -webkit-box-shadow: inset 0 -2px 18px rgba(0, 0, 0, .4), 0 0 20px rgba(0, 0, 0, .4);
+                -moz-box-shadow: inset 0 -2px 18px rgba(0, 0, 0, .4), 0 0 20px rgba(0, 0, 0, .4);
+                box-shadow: inset 0 -2px 18px rgba(0, 0, 0, .4), 0 0 20px rgba(0, 0, 0, .4);
+                -webkit-transition: background-color .2s ease;
+                -moz-transition: background-color .2s ease;
+                transition: background-color .2s ease;
+            }
+
+            @media (min-width: 1px) {
+                .vidPlay {
+                    position: absolute;
+                    display: inline-block;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -28px;
+                    margin-left: -32px;
+                    z-index: 10;
+                }
+                .vidCont-bg {
+                    max-height: 380px;
+                    max-width: 880px;
+                    background: url("https://nhlstreamz.net/wp-content/uploads/2024/11/hq720.jpg") no-repeat center black;
+                    background-size: cover;
+                    height: 43vw;
+                    position: relative;
+                }
+                .vidCont-bg-layer {
+                    height: 100%;
+                    width: 100%;
+                    background-color: black;
+                    position: absolute;
+                    -webkit-animation: fadeOut 0s ease-out 1;
+                    -moz-animation: fadeOut 0s ease-out 1;
+                    animation: fadeOut s ease-out 1;
+                    -webkit-animation-fill-mode: forwards;
+                    -moz-animation-fill-mode: forwards;
+                    animation-fill-mode: forwards;
+                }
+            }
+
+            .vidPlay:hover {
+                background-color: #ff1d25;
+                box-shadow: inset 0 -2px 18px rgba(0, 0, 0, .4), 0 0 20px rgba(0, 0, 0, .6);
+            }
+
+            .vidPlayTriangle {
+                position: absolute;
+                top: 14px;
+                left: 21px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 13px 0 13px 26px;
+                border-color: transparent transparent transparent white;
+                opacity: 1;
+                -webkit-animation: fadeIn 0s ease-out 1;
+                -moz-animation: fadeIn 0s ease-out 1;
+                animation: fadeIn 0s ease-out 1;
+            }
+
+            .vidPlayLoader {
+                text-align: center;
+                fill: #fff;
+                opacity: 0;
+                -webkit-animation: spin 1s steps(1, end) infinite, fadeOut 0s ease-out 1;
+                -moz-animation: spin 1s steps(1, end) infinite, fadeOut 0s ease-out 1;
+                animation: spin 1s steps(1, end) infinite, fadeOut 0s ease-out 1;
+            }
+
+            i>svg {
+                width: 32px;
+                height: 32px;
+                vertical-align: top;
+            }
+
+            .live {
+                color: #ff0000 !important;
+            }
+
+            .yLink__sub {
+                display: inline-block;
+                padding: 5px 12px;
+                margin: 4px 0;
+                color: #3498db;
+                text-decoration: underline;
+            }
+
+            .yLink__sub:hover {
+                color: #808080;
+            }
+
+            .yLink__sub+.yLink__sub {
+                border-left: 1px dotted #a0a0a0;
+            }
+
+            @-webkit-keyframes pulse {
+                from {
+                    background-color: #006dcc
+                }
+                50% {
+                    background-color: #0a8dff
+                }
+                to {
+                    background-color: #006dcc
+                }
+            }
+
+            @-moz-keyframes pulse {
+                from {
+                    background-color: #006dcc
+                }
+                50% {
+                    background-color: #0a8dff
+                }
+                to {
+                    background-color: #006dcc
+                }
+            }
+
+            @keyframes pulse {
+                from {
+                    background-color: #006dcc
+                }
+                50% {
+                    background-color: #0a8dff
+                }
+                to {
+                    background-color: #006dcc
+                }
+            }
+
+            @-webkit-keyframes fadeOut {
+                0% {
+                    opacity: 1;
+                }
+                88% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            @-moz-keyframes fadeOut {
+                0% {
+                    opacity: 1;
+                }
+                88% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            @keyframes fadeOut {
+                0% {
+                    opacity: 1;
+                }
+                88% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            @-webkit-keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+                88% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            @-moz-keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+                88% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+                88% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            @-webkit-keyframes spin {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    -ms-transform: rotate(0deg);
+                    transform: rotate(0deg)
+                }
+                100% {
+                    -webkit-transform: rotate(0deg);
+                    -ms-transform: rotate(0deg);
+                    transform: rotate(360deg)
+                }
+            }
+
+            @-moz-keyframes spin {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    -ms-transform: rotate(0deg);
+                    transform: rotate(0deg)
+                }
+                100% {
+                    -webkit-transform: rotate(0deg);
+                    -ms-transform: rotate(0deg);
+                    transform: rotate(360deg)
+                }
+            }
+
+            @keyframes spin {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    -ms-transform: rotate(0deg);
+                    transform: rotate(0deg)
+                }
+                100% {
+                    -webkit-transform: rotate(0deg);
+                    -ms-transform: rotate(0deg);
+                    transform: rotate(360deg)
+                }
+            }
+
+            @keyframes stretch {
+                0% {
+                    opacity: 0
+                }
+                to {
+                    opacity: 1
+                }
+            }
+
+            .bnrplayer-container {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 50px;
+                z-index: 1;
+            }
+
+            .bnrplayer {
+                font-size: 15px;
+                line-height: 50px;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                height: 50px;
+                background-color: rgba(0, 0, 0, .5);
+                border-top: 1px solid #222;
+            }
+
+            .bnrplayer__play {
+                display: inline-block;
+                vertical-align: top;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 12px 0 12px 25px;
+                border-color: transparent transparent transparent #fff;
+            }
+
+            .bnrplayer__comp {
+                vertical-align: top;
+                padding: 13px 25px 4px;
+                margin-top: -1px;
+            }
+
+            .bnr-play-cont {
+                cursor: pointer;
+            }
+
+            .bnr-play-cont:hover {
+                background-color: rgba(0, 0, 0, 0.14);
+            }
+
+            .bnr-live {
+                color: red;
+                font-family: arial;
+                text-transform: uppercase;
+                font-weight: bold;
+                padding: 0 10px;
+            }
+
+            .bnr-live::before {
+                background-image: url('https://nflhunter.com/wp-content/uploads/2022/09/red-button.png');
+                background-size: 11px 11px;
+                display: inline-block;
+                width: 11px;
+                height: 11px;
+                content: "";
+                margin-right: 10px;
+                animation-name: stretch;
+                animation-duration: 1s;
+                animation-timing-function: ease-out;
+                animation-delay: 0;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+                animation-fill-mode: none;
+                animation-play-state: running;
+            }
+
+            .btn__class {
+                background-size: 50%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .btn-chromecast {
+                background-image: url('https://nflhunter.com/wp-content/uploads/2022/09/zabra.png');
+            }
+
+            .btn-hd {
+                background-image: url('https://nflhunter.com/wp-content/uploads/2022/09/hd.png');
+            }
+
+            .btn-sound {
+                background-image: url('https://nflhunter.com/wp-content/uploads/2022/09/volumn-button.png');
+            }
+
+            .btn-fullscreen {
+                background-image: url('https://nflhunter.com/wp-content/uploads/2022/09/expand.png');
+            }
+
+            .bnr-timer-cont {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-flex: 1;
+                -webkit-flex: 1 1 auto;
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+                padding: 0;
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            .bnr-timer-line {
+                -webkit-box-flex: 1;
+                -webkit-flex: 1 1 auto;
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+                margin: 22px 0 0 20px;
+                height: 4px;
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+
+            .bnrplayer__volume {
+                position: relative;
+                top: -2px;
+                width: 29px;
+                height: 12px;
+            }
+
+            .bnrplayer__fullscreen {
+                position: relative;
+                top: -2px;
+                width: 12px;
+                height: 12px;
+            }
+
+            #video-link {
+                display: block;
+                position: relative;
+                text-decoration: none;
+            }
+
+            .emblem-container {
+                display: none;
+            }
+
+            .linkContainer {
+                padding-top: 5px;
+                max-width: 880px;
+                background-color: transparent;
+                font-family: 'Titillium Web', sans-serif;
+                font-size: 17px;
+            }
+
+            .yLink {
+                color: #3498db;
+                text-decoration: underline;
+                margin: 0;
+                padding: 4px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .yLink:hover {
+                color: #0a8dff;
+            }
+
+            .yInfo {
+                color: #000000;
+                padding-left: 4px;
+            }
+
+            #aff-click-link {
+                text-decoration: none !important;
+            }
+
+            .link-cursor {
+                cursor: pointer;
+            }
+
+            @media (max-width: 600px) {
+                .bnrplayer-container {
+                    height: 25px;
+                }
+                .bnrplayer {
+                    font-size: 0.8em;
+                    line-height: 1.7em;
+                    height: 25px;
+                }
+                .bnrplayer__play {
+                    border-width: 7px 0 7px 12px;
+                }
+                .bnrplayer__comp {
+                    padding: 3px 15px 4px;
+                }
+                .bnr-play-cont {
+                    padding-top: 6px;
+                }
+                .bnr-live {
+                    padding-left: 0;
+                    padding-right: 5px;
+                }
+                .bnr-timer-line {
+                    margin: 10px 0 0 10px;
+                }
+            }
+        </style>
+        <div id="aff-click">
+            <div class="vidCont-bg">
+                <div class="vidCont-bg-layer"></div>
+                <div class="vidCont-center">
+                    <h3 id="topTitle">Stream NHL Live Online IN HD</h3>
+                </div>
+                <div class="vidPlay">
+                    <div class="vidPlayLoader"></div>
+                    <div class="vidPlayTriangle"></div>
+                </div>
+                <div class="bnrplayer-container">
+                    <div class="bnrplayer">
+                        <div class="bnrplayer__comp bnr-play-cont"><span class="bnrplayer__play"></span></div>
+                        <div class="bnrplayer__comp bnr-timer-cont"><span>00:00</span><span class="bnr-timer-line"></span></div>
+                        <div class="bnrplayer__comp bnr-live">Live</div>
+                        <div class="bnrplayer__comp btn__class btn-chromecast"></div>
+                        <div class="bnrplayer__comp btn__class btn-hd"></div>
+                        <div class="bnrplayer__comp btn__class btn-sound"></div>
+                        <div class="bnrplayer__comp btn__class btn-fullscreen"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="linkContainer">
+            <h4 class="yLink" style="display:inline-block;padding-top: 10px;">
+                <div id="bottomTitle" class="link-cursor">Watch NHL IN HD | No Blackouts | No Ads</div>
+            </h4><br>
+            <div class="yLink__sub">
+                <div class="link-cursor"><strong>FHD</strong></div>
+            </div>
+            <div class="yLink__sub">
+                <div class="link-cursor"><strong>UHD</strong></div>
+            </div>
+            <div class="yLink__sub">
+                <div class="link-cursor"><strong>4K</strong></div>
+            </div>
+            <style>
+                .vidCont-bg {
+                    height: 77%;
+                }
+            </style>
+        </div>
+        </div>
+    </a>
+</center>
