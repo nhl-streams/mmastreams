@@ -815,9 +815,9 @@ ol {
 
 .btn-outline {
 
-    border: 1px solid #daa300;
-    color: #000;
-    background-color: #fff;
+     border: 1px solid #daa300;
+    color: #ffffff;
+    background-color: #484848;
 	text-transform:uppercase;
     padding: .8em 8em;
     font-size: 1em;
