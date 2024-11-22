@@ -812,3 +812,21 @@ ol {
         border: 0px solid #000000;
         background-color: #000000;
     }
+
+.btn-outline {
+
+    border: 1px solid #daa300;
+    color: #000;
+    background-color: #fff;
+	text-transform:uppercase;
+    padding: .8em 8em;
+    font-size: 1em;
+    line-height: 4;
+    
+}
+
+.btn-outline:hover{
+	color: #fff;
+    background-color: #300;
+}   
+
